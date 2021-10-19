@@ -1,0 +1,61 @@
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+        background-color:black;
+    }
+    header {
+      background-color: red;
+      text-align: center;
+      padding: 1.5rem;
+      color: white;
+    }
+    .main_nav {
+      display: flex;
+      list-style: none;
+      background-color: white;
+      padding: 0.5rem;
+      color: black;
+    }
+
+    .main_nav li {
+      margin: 5px 5px;
+      cursor:pointer;
+    }
+    .main_nav li:nth-of-type(4) {
+      margin-left: auto;
+    }
+
+    .home_table {
+      margin: 10px auto;
+      font-size: 20px;
+      border-collapse: collapse;
+      width: 70%;
+      text-align: center;
+    }
+
+    .home_table td {
+      cursor: pointer;
+    }
+
+    .home_table td,
+    .home_table th {
+      padding: 0.5rem;
+    }
+
+    .home_table td{
+      background-color:white;
+    }
+
+    .home_table th {
+      background-color: red;
+      color:white;
+    }
+
+    .home_table tr {
+      border: 1px solid gray;
+      border-right: none;
+      border-left: none;
+    }

@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+header {
+    background-color: lightgray;
+    padding:2rem;
+    color:white;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    background-color: gray;
+}
+
+nav li {
+    display: inline-block;
+    padding:15px 20px;
+    color:white;
+    cursor:pointer;
+}
+
+nav li.login {
+    margin-left: auto;
+}
+
+nav li:hover  {
+    background-color: aliceblue;
+    color:gray;
+    transition:0.5s;
+}
+
+footer {
+    background-color:gray;
+    color:white;
+    text-align:center;
+    padding:1rem;
+}
+
+table.buyer_list {
+    width: 80%;
+    margin:10px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.buyer_list th {
+    background-color: #ddd;
+}
+
+table.buyer_list th, table.buyer_list td {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+    text-align: center;
+}
+
+table.detail {
+    width: 80%;
+    margin:10px auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table.detail th {
+    background-color: #ddd;
+}
+
+table.detail th, table.detail td {
+    border-bottom: 1px solid #ddd;
+    padding:1em;
+    text-align: center;
+}
+
+.btn_add{
+    padding:1rem;
+    border:none;
+    border-radius:3px;
+    color:white;
+    background-color:skyblue;
+}
+
+
+
+
+
+

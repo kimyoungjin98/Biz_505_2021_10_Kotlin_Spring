@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<section layout:fragment="content" class="buyer_detail">
+    <div>
+        <label>ID</label><span th:text="${BUYER.userid}">B0001</span>
+        <label>이름</label><span th:text="${BUYER.name}"></span>
+    </div>
+    <div>
+        <label>전화번호</label><span th:text="${BUYER.tel}">02-111</span>
+        <label>주소</label><span th:text="${BUYER.address}">서울시</span>
+    </div>
+    <div>
+        <button>고객정보 수정</button>
+        <button>고객정보 삭제</button>
+    </div>
+    <div class="detail_content">
+    <table class="detail">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>상품명</th>
+                <th>단가</th>
+                <th>수량</th>
+                <th>금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>아이폰13</td>
+                <td>1,200,000</td>
+                <td>10</td>
+                <td>12,000,000</td>
+            </tr>
+            <tr>
+                <td>합계</td>
+                <td>1</td>
+                <td></td>
+                <td></td>
+                <td>12,000,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn_add">주문 추가</button>
+    </div>
+</section>
+</html>
