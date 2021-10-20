@@ -18,8 +18,16 @@ class HomeController {
 
     /**
      * lateinit var
-     * 특별히 변수, 객체를 선언할 때 즉시 초기화 하지 않고
-     * 나중에 초기화를 하겠다 라는 의미
+     *  특별히 변수, 객체를 선언할때 즉시 초기화 하지 않고
+     *  나중에 초기화를 하겠다 라는 의미미
+     *
+     *  Spring 환경에서는 Component(Service, Dao 등등) 객체는
+     *  코드에서 직접 초기화 하지 않는다
+     *  코드에서는 선언만 해두고 @Autowired 설정을 하면
+     *  Spring Ioc, DI 등의 기능에 의해
+     *  (나중에, 필요할때) 자동으로 주입이 된다
+     *
+     *  반드시 lateinit 키워드를 부착하여 선언해야 한다
      */
     @Autowired
     private lateinit var bService:BuyerService
@@ -39,34 +47,24 @@ class HomeController {
         println( ConfigString.APP_NAME )
         println( ConfigString.APP_VERSION )
 
-        var userList = bService.selectAll()
-        // model.addAttribute("USERS", userList)
-        model["USERS"] = userList;
-
-        return "home"
+//        val userList = bService.selectAll()
+//        // model.addAttribute("USERS",userList)
+//        model["USERS"] = userList
+        return "redirect:/buyer/list"
     }
 
+    /**
+     *
+     * @ResponseBody
+     * 문자열, 객체, 배열 등등의 모든 데이터를
+     * 있는 그대로 또는 JSON 형태로 변환하여
+     * client 에 보내라
+     *
+     */
     @ResponseBody
-    @RequestMapping(value=["/list"], method = [RequestMethod.GET])
-    fun list():Array<Buyer> {
-        return bService.selectAll();
+    @RequestMapping(value=["/list"],method=[RequestMethod.GET])
+    fun list() : Array<Buyer> {
+        return bService.selectAll()
     }
 
-    @RequestMapping(value=["/detail"], method = [RequestMethod.GET])
-    fun detail( model: Model, @RequestParam("userid") userid:String ):String {
-
-        val buyer = bService.findById(userid);
-        model["BUYER"] = buyer
-
-        return "detail"
-    }
-
-    @ResponseBody
-    @RequestMapping(value=["insert"], method=[RequestMethod.GET])
-    fun insert():Buyer{
-        val insertBuyer = BuyerServiceImplV1.BUYER_LIST[0]
-        bService.insert(insertBuyer)
-
-        return insertBuyer
-    }
 }

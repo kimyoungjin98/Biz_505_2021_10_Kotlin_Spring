@@ -1,0 +1,40 @@
+.buyer_write{
+    padding:1.5rem;
+    margin:0 auto;
+    width:80%;
+}
+
+.write_btn{
+   display:flex;
+   justify-content:center;
+}
+
+.write_btn button{
+    width:100px;
+}
+
+.buyer_write input{
+    display:inline-block;
+    padding:0.5em;
+    width:40%;
+    outline:none;
+     border:none;
+    border-bottom:1px solid lightgray;
+}
+
+.buyer_write button:last-of-type(){
+    margin-right:calc(10% - 16px)
+}
+
+.buyer_write div {
+    margin:5px auto;
+    width:80%;
+}
+
+.buyer_write label{
+    display:inline-block;
+    width: 30%;
+    text-align:right;
+    margin:10px;
+}
+

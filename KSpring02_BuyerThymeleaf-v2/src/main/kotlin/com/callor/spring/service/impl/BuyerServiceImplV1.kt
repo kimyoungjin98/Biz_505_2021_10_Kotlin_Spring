@@ -5,12 +5,14 @@ import com.callor.spring.service.BuyerService
 import org.springframework.stereotype.Service
 import kotlin.random.Random
 
-@Service
+@Service("bServiceV1")
 class BuyerServiceImplV1:BuyerService {
+
+    private lateinit var bDao : BuyerRepository
 
     // 현재 BuyerServiceImplV1 에서 사용할 가상 데이터를
     // 선언하기
-    private companion object {
+    companion object {
         val RND = Random(System.currentTimeMillis())
         val BUYER_LIST = arrayOf(
             Buyer(
@@ -60,15 +62,16 @@ class BuyerServiceImplV1:BuyerService {
         TODO("Not yet implemented")
     }
 
-    override fun insert(buyer: Buyer): Int {
+    override fun insert(buyer: Buyer): Buyer {
+
+        return bDao.save(buyer)
+    }
+
+    override fun delete(buyer: String): Buyer {
         TODO("Not yet implemented")
     }
 
-    override fun delete(buyer: String): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun update(buyer: Buyer): Int {
+    override fun update(buyer: Buyer): Buyer {
         TODO("Not yet implemented")
     }
 
