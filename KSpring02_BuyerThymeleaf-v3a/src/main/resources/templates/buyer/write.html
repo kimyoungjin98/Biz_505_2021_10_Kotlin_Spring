@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="@{/layout}">
+
+<section layout:fragment="content">
+    <form class="form_write" method="post" th:object="${BUYER}">
+<!--        BUYER를 보낼테니 밑에서 알아서 만들어-->
+        <fieldset>
+            <legend>고객정보등록</legend>
+            <div>
+                <label>USER ID</label>
+                <input name="userid" placeholder="고객 ID를 입력하세요" th:field="*{userid}"/>
+            </div>
+            <div>
+                <label>NAME</label>
+                <input name="name" placeholder="이름을 입력하세요" th:field="*{name}"/>
+            </div>
+            <div>
+                <label>TEL</label>
+                <input name="tel" placeholder="전화번호를 입력하세요" th:field="*{tel}"/>
+            </div>
+            <div>
+                <label>ADDRESS</label>
+                <input name="address" placeholder="주소를 입력하세요" th:field="*{address}"/>
+            </div>
+            <div>
+                <label>MANAGER</label>
+                <input name="manager" placeholder="담당자명을 입력하세요" th:field="*{manager}"/>
+            </div>
+            <div>
+                <label>MANAGER TEL</label>
+                <input name="man_tel" placeholder="담당자 연락처를 입력하세요" th:field="*{man_tel}"/>
+            </div>
+            <div class="btn_box">
+                <button type="button" class="btn_save">등록</button>
+                <button type="button" class="btn_list">LIST</button>
+            </div>
+        </fieldset>
+    </form>
+</section>

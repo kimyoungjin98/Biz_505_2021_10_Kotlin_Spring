@@ -1,0 +1,48 @@
+.form_write {
+   margin: 20px auto;
+   width: 80%;
+   text-align: center;
+}
+
+.form_write div{
+    width : 80%;
+}
+
+.form_write label,
+ .form_write input {
+     margin: 10px;
+}
+.form_write label {
+   width: 30%;
+   display: inline-block;
+   text-align : right;
+}
+
+.form_write input {
+   width: 60%;
+   padding: 1rem;
+   border: none;
+   border-bottom: 2px solid #ccc;
+
+}
+
+.form_write input:hover {
+    background-color: #eee;
+}
+
+section.buyer_write fieldset {
+    border:1px solid #aaa;
+    border-radius:10px;
+}
+
+section.buyer_write legend {
+    margin :50px;
+    /*top and bottom : 10px, left and right: 30px*/
+    padding : 10px 30px;
+    font-weight : 900;
+    color:darkblue;
+}
+
+
+
+

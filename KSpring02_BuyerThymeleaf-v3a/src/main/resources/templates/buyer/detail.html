@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="@{/layout}">
+
+<section layout:fragment="content">
+    <script th:inline="javascript">
+    /*
+    javascript 코드에서는 thymeleaf template 변수를 사용하기 위해서
+    html 에서 해당 값을 js 변수로 다시 변환시켜줘야 한다
+    // var rootPath = ${context.request.pageRequest}
+
+    이 변환 작업을 하기 위해서는 script 에
+    th:line="javascript" 속성을 추가한다
+    */
+    var userid = /*[[ ${BUYER.userid} ]]*/ null
+    </script>
+<!--    <div class="user_info" th:each="USER: ${USERINFO}" th:data-id="${USER.userid}">-->
+        <!--
+        <table>
+            <tr>
+                <th>ID</th>
+                <td th:text="${USER.userid}"></td>
+                <th>전화번호</th>
+                <td th:text="${USER.tel}"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td th:text="${USER.name}"></td>
+                <th>주소</th>
+                <td th:text="${USER.address}"></td>
+            </tr>
+        </table>
+        <div class="user_btn">
+            <button>고객정보 수정</button>
+            <button>고객정보 삭제</button>
+        </div>
+        -->
+        <section class="buyer_detail">
+            <div>
+                <label>ID</label><span th:text="${BUYER.userid}" />
+                <label>이름</label><span th:text="${BUYER.name}" />
+            </div>
+            <div>
+                <label>전화번호</label><span th:text="${BUYER.tel}" />
+                <label>주소</label><span th:text="${BUYER.address}" />
+            </div>
+            <div>
+                <button class="btn_update">고객정보 수정</button>
+                <button class="btn_delete btn_warring">고객정보 삭제</button>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="user_table">
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>상품명</th>
+                <th>단가</th>
+                <th>수량</th>
+                <th>금액</th>
+            </tr>
+            <tr th:each="PRO: ${PRODUCT}" th:data-id="${PRO.p_id}">
+                <td th:text="${PRO.p_no}"/>
+                <td th:text="${PRO.p_name}"/>
+                <td th:text="${PRO.p_price}"/>
+                <td th:text="${PRO.p_qty}"/>
+                <td th:text="${PRO.total_price}"/>
+            </tr>
+            <tr class="total_tr">
+                <th>합계</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+        <button>주문 추가</button>
+
+    </div>
+</section>

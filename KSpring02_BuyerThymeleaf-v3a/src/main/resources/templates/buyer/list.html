@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="@{/layout}">
+
+<section layout:fragment="content">
+    <style>
+        button.btn_insert {
+            margin-right: calc(10% - 16px);
+            margin-top:5px;
+            margin-button:5px;
+        }
+    </style>
+    <table class="buyer_list">
+        <thead>
+        <tr>
+            <th>고객 ID</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>담당자명</th>
+            <th>담당자연락처</th>
+            <th>매출액합계(만원)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- users에 담겨있는걸 foreach로 반복하면서 각요소를 user에 담아서 내부로 보내라 -->
+        <tr class="buyer_tr" th:each="BUYER: ${BUYERS}" th:data-id="${BUYER.userid}">
+            <!-- 서버를통해 데이터를 받아오면 USER.userid 의 내용이 보이고,
+                그냥 돌리면 B001이 보인다는 장점이 있다.-->
+            <td th:text="${BUYER.userid}"/>
+            <td th:text="${BUYER.name}"/>
+            <td th:text="${BUYER.tel}"/>
+            <td th:text="${BUYER.address}"/>
+            <td th:text="${BUYER.manager}"/>
+            <td th:text="${BUYER.man_tel}"/>
+            <td th:text="${BUYER.buy_total}"/>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btn_box"><button class="btn_insert">고객등록</button></div>
+    <script>
+        $(function() {
+            $("button.btn_insert").on("click",function() {
+                location.href="/buyer/insert"
+            })
+        })
+    </script>
+</section>
