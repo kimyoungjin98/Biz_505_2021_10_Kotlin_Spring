@@ -5,33 +5,25 @@
       layout:decorator="~{/layout}">
 
 <section layout:fragment="content">
-    <form class="form_write" method="post" th:object="${BUYER}">
+    <form class="form_write" method="post" th:object="${ORDER}">
 <!--        BUYER를 보낼테니 밑에서 알아서 만들어-->
         <fieldset>
-            <legend>고객정보등록</legend>
+            <legend>주문</legend>
             <div>
                 <label>USER ID</label>
                 <input name="userid" placeholder="고객 ID를 입력하세요" th:field="*{userid}"/>
             </div>
             <div>
                 <label>NAME</label>
-                <input name="name" placeholder="이름을 입력하세요" th:field="*{name}"/>
+                <input name="name" placeholder="상품이름을 입력하세요" th:field="*{pname}"/>
             </div>
             <div>
                 <label>TEL</label>
-                <input name="tel" placeholder="전화번호를 입력하세요" th:field="*{tel}"/>
+                <input name="amt" placeholder="단가를 입력하세요" th:field="*{amt}"/>
             </div>
             <div>
                 <label>ADDRESS</label>
-                <input name="address" placeholder="주소를 입력하세요" th:field="*{address}"/>
-            </div>
-            <div>
-                <label>MANAGER</label>
-                <input name="manager" placeholder="담당자명을 입력하세요" th:field="*{manager}"/>
-            </div>
-            <div>
-                <label>MANAGER TEL</label>
-                <input name="man_tel" placeholder="담당자 연락처를 입력하세요" th:field="*{man_tel}"/>
+                <input name="qty" placeholder="수량을 입력하세요" th:field="*{qty}"/>
             </div>
             <div class="btn_box">
                 <button type="button" class="btn_save">등록</button>

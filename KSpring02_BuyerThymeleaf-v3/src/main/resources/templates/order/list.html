@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<section layout:fragment="content">
+    <style>
+        button.btn_insert {
+            margin-right: calc(10% - 16px);
+            margin-top:5px;
+            margin-button:5px;
+        }
+    </style>
+    <table class="list order_list">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>고객 ID</th>
+            <th>거래일시</th>
+            <th>상품명</th>
+            <th>단가</th>
+            <th>수량</th>
+            <th>합계</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr class="buyer_tr" th:each="SALE: ${SALES}" th:data-id="${SALE.seq}">
+                <td th:text="${SALE.seq}"/>
+                <td th:text="${SALE.userid}"/>
+                <td th:text="${SALE.date}"/>
+                <td th:text="${SALE.pname}"/>
+                <td th:text="${SALE.amt}"/>
+                <td th:text="${SALE.qty}"/>
+                <td th:text="${SALE.total}"/>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn_box"><button class="btn_order">주문</button></div>
+    <script>
+<!--        $(function() {-->
+<!--            $("button.btn_insert").on("click",function() {-->
+<!--                location.href="/order/insert"-->
+<!--            })-->
+<!--        })-->
+            $(function() {
+                $("tr.buyer_tr").on("click", function() {
+                    let seq = $(this).data("id")
+                    location.href = `/order/detail?seq=${seq}`
+                })
+            })
+    </script>
+</section>
+</html>

@@ -1,0 +1,50 @@
+table, tr, th, td {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #eee;
+}
+
+th {
+    padding: 1rem;
+    background: #ddd;
+}
+
+td {
+    padding: 0.5rem;
+}
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    background-color: lightsteelblue;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    border-radius: 0 0 15px 15px;
+}
+
+/*
+짝수라인에만 색을 주겠다
+*/
+table.list tr:nth-of-type(even) {
+    background-color:#ddd;
+}
+
+/*
+tr에 있는 두번째부터 hover를 적용되게 하겠다.
+*/
+table.list tr:nth-of-type(n+1):hover {
+    cursor:pointer;
+    background-color:#bbb;
+}

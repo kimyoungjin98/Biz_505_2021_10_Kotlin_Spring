@@ -1,0 +1,48 @@
+div.btn_box {
+    text-align :right;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 0px 5px;
+}
+
+button:hover {
+
+}
+
+section.buyer_detail button:nth-of-type(2) {
+    background: red;
+    color: white;
+}
+
+div.user_table button {
+    width: 10%;
+    text-align: center;
+    padding: 0.3rem;
+    margin-left: auto;
+    display: block;
+}
+
+button.btn_insert, button.btn_save, button.btn_update {
+    color:white;
+    background-color:blue;
+}
+
+button.btn_list {
+    color:white;
+    background-color:green;
+}
+
+/**
+!important : 이전에 어떤 style이 지정되었든 상관없이 현재
+지정하는 style이 적용이 되도록 하라
+*/
+button.btn_warring {
+    color:white !important;
+    background-color: red !important;
+}

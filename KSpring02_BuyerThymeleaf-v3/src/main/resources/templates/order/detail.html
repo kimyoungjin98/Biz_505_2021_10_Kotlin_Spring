@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/layout}">
+
+<section layout:fragment="content">
+        <section class="order_detail">
+            <div>
+                <label>주문번호</label><span th:text="${ORDER.seq}" />
+                <label>고객ID</label><span th:text="${ORDER.userid}" />
+            </div>
+            <div>
+                <label>단가</label><span th:text="${ORDER.amt}" />
+                <label>거래일시</label><span th:text="${ORDER.date}" />
+            </div>
+            <div>
+                <label>수량</label><span th:text="${ORDER.qty}" />
+                <label>합계</label><span th:text="${ORDER.total}" />
+            </div>
+            <div class="btn_order_detail" th:data-id="${ORDER.seq}">
+                <button class="btn_update">수정</button>
+                <button class="btn_delete">삭제</button>
+                <button class="btn_home">리스트로</button>
+            </div>
+        </section>
+
+    </div>
+    <script>
+        $(function(){
+            $("div.btn_order_detail").on("click", function(e){
+                let text = $(e.target).text()
+                let href = "/order/"
+                let seq = $(this).data("id")
+
+                if($(e.target).prop("tagName") === "BUTTON"){
+                    if(text === "수정"){
+                        href += `update?seq=${seq}`
+                    }
+                    else if(text === "삭제"){
+                        href += `delete?seq=${seq}`
+                    }
+                    location.href = href
+                }
+
+            })
+        })
+    </script>
+</section>

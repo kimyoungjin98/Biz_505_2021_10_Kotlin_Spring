@@ -1,40 +1,48 @@
-.buyer_write{
-    padding:1.5rem;
-    margin:0 auto;
-    width:80%;
+.form_write {
+   margin: 20px auto;
+   width: 80%;
+   text-align: center;
 }
 
-.write_btn{
-   display:flex;
-   justify-content:center;
+.form_write div{
+    width : 80%;
 }
 
-.write_btn button{
-    width:100px;
+.form_write label,
+ .form_write input {
+     margin: 10px;
+}
+.form_write label {
+   width: 30%;
+   display: inline-block;
+   text-align : right;
 }
 
-.buyer_write input{
-    display:inline-block;
-    padding:0.5em;
-    width:40%;
-    outline:none;
-     border:none;
-    border-bottom:1px solid lightgray;
+.form_write input {
+   width: 60%;
+   padding: 1rem;
+   border: none;
+   border-bottom: 2px solid #ccc;
+
 }
 
-.buyer_write button:last-of-type(){
-    margin-right:calc(10% - 16px)
+.form_write input:hover {
+    background-color: #eee;
 }
 
-.buyer_write div {
-    margin:5px auto;
-    width:80%;
+section.buyer_write fieldset {
+    border:1px solid #aaa;
+    border-radius:10px;
 }
 
-.buyer_write label{
-    display:inline-block;
-    width: 30%;
-    text-align:right;
-    margin:10px;
+section.buyer_write legend {
+    margin :50px;
+    /*top and bottom : 10px, left and right: 30px*/
+    padding : 10px 30px;
+    font-weight : 900;
+    color:darkblue;
 }
+
+
+
 
