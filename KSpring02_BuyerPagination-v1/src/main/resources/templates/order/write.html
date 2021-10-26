@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<form method="post" class="write_form" layout:fragment="content" th:object="${SALES}">
+    <script th:src="@{/static/js/order/write.js}"></script>
+
+    <fieldset>
+        <legend>고객 상품 관리</legend>
+
+        <div>
+            <label>고객 ID</label>
+            <input name="userid" th:field="*{userid}">
+        </div>
+        <div>
+            <label>상품명</label><input name="pname" th:field="*{pname}">
+        </div>
+        <div>
+            <label>거래일자</label>
+            <input name="date" th:field="*{date}">
+        </div>
+        <div>
+            <label>거래시간</label>
+            <input name="time" th:field="*{time}">
+        </div>
+        <div>
+            <label>수량</label><input name="qty" th:field="*{qty}">
+        </div>
+        <div>
+            <label>단가</label><input name="amt" th:field="*{amt}">
+        </div>
+
+        <div class="write_btn div_button">
+            <button class="btn_save" type="button">작성하기</button>
+            <button class="btn_list" type="button">List</button>
+        </div>
+    </fieldset>
+</form>

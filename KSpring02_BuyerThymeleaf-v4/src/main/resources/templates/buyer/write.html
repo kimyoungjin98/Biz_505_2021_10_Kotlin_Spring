@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<form method="post" class="write_form" layout:fragment="content" th:object="${BUYER}">
+
+    <fieldset>
+        <legend>고객 관리</legend>
+
+        <div>
+            <label>고객 ID</label>
+            <input name="userid" th:field="*{userid}">
+        </div>
+        <div>
+            <label>이름</label><input name="name" th:field="*{name}">
+        </div>
+        <div>
+            <label>전화번호</label><input name="tel" th:field="*{tel}">
+        </div>
+        <div>
+            <label>주소</label><input name="address" th:field="*{address}">
+        </div>
+        <div>
+            <label>담당자명</label><input name="manager" th:field="*{manager}">
+        </div>
+        <div>
+            <label>담당자연락처</label><input name="man_tel" th:field="*{man_tel}">
+        </div>
+        <div class="write_btn div_button">
+            <button class="btn_save" type="button">작성하기</button>
+            <button type="button">List</button>
+        </div>
+    </fieldset>
+</form>

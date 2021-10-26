@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="~{/layout}">
+
+<section layout:fragment="content" class="buyer_list">
+    <style>
+        section.buyer_list div.nextPage {
+            background-color: green;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+    <table class="buyer_list">
+        <thead>
+        <tr>
+            <th>고객 ID</th>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+            <th>담당자명</th>
+            <th>담당자연락처</th>
+            <th>매출액합계(만원)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- users에 담겨있는걸 foreach로 반복하면서 각요소를 user에 담아서 내부로 보내라 -->
+        <tr class="buyer_tr" th:each="BUYER: ${BUYERS}" th:data-id="${BUYER.userid}">
+            <!-- 서버를통해 데이터를 받아오면 BUYER.userid 의 내용이 보이고,
+                그냥 돌리면 B001이 보인다는 장점이 있다.-->
+            <td th:text="${BUYER.userid}"/>
+            <td th:text="${BUYER.name}"/>
+            <td th:text="${BUYER.tel}"/>
+            <td th:text="${BUYER.address}"/>
+            <td th:text="${BUYER.manager}"/>
+            <td th:text="${BUYER.man_tel}"/>
+            <td th:text="${BUYER.buy_total}"/>
+        </tr>
+        </tbody>
+    </table>
+
+    <th:block th:replace="~{/fragment/page_nav :: pageNav(${BUYERS})}"></th:block>
+
+    <div class="div_button">
+        <div class="nextPage">더보기</div>
+        <button class="btn_insert">고객 등록</button>
+    </div>
+    <script>
+        $(function () {
+
+            let currentPage = 0;
+            let lastPage = false
+
+            // 이미 생성된 DOM에는 정상적으로 event가 적용된다
+            // 동적으로 추가된 append() DOM에는 event를 적용할 수 없다
+            $("button.btn_insert").on("click", function () {
+                location.href = `${rootPath}buyer/insert`;
+            })
+
+            $("div.div_button div.nextPage").on("click", function () {
+
+                if (lastPage) {
+                    alert("마지막 페이지입니다")
+                    return false
+                }
+
+                // jQuery.ajax
+                $.ajax({
+                    url: `${rootPath}buyer/sub_page`,
+                    data: {page: ++currentPage},
+                    method: "GET"
+                }).done(function (result) {
+                    console.log(result.last)
+                    lastPage = result.last
+                    $("table.buyer_list tbody").append(result)
+                })
+            })
+        })
+    </script>
+</section>

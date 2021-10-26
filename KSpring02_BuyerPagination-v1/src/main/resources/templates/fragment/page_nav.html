@@ -1,0 +1,69 @@
+<section class="page_nav" th:fragment="pageNav(PAGES)">
+  <style>
+    ul.page_body{
+      list-style:none;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      margin:2rem auto;
+    }
+    li.page_item{
+      border:1px solid #DEE2E6;
+      padding:0.5rem 0.75rem;
+      color:#007BFF;
+      cursor:pointer;
+    }
+  </style>
+  <!--
+    PAGES.number : 선택한 page 번호
+    T(Math).floor() : 실수를 정수로 변환하기
+  !-->
+  <ul class="page_body"
+      th:with="pageCount=5, startVar=${ T(Math).floor(PAGES.number/pageCount) * pageCount +1 },
+      start = ${startVar < PAGES.totalPages ? startVar : PAGES.totalPages },
+      last=${start + (pageCount - 1) < PAGES.totalPages ? start + (pageCount - 1) : PAGES.totalPages}"
+  >
+    <li class="page_item">처음</li>
+    <li class="page_item">&lt;</li>
+    <th:block th:each="page : ${#numbers.sequence(start,last)}">
+      <li class="page_item" th:text="${page}"></li>
+    </th:block>
+
+    <li class="page_item">&gt;</li>
+    <li class="page_item">끝</li>
+  </ul>
+  <script th:inline="javascript">
+    $(function (){
+      $("li.page_item").on("click", function (){
+        const text = $(this).text()
+        let pageNum = "0"
+
+        if (text === "처음") {
+          pageNum = "0"
+        } else if (text === "끝") {
+          pageNum = /*[[ ${PAGES.totalPages} ]]*/
+        } else if(text === "<") {
+          pageNum = /*[[ ${PAGES.number} ]]*/
+                  pageNum = --pageNum < 1 ? 1 : pageNum
+        } else if(text === ">") {
+          pageNum = /*[[ ${PAGES.number} ]]*/
+                  pageNum = ++pageNum > /*[[ ${PAGES.totalPages} ]]*/
+                          ? /*[[ ${PAGES.totalPages} ]]*/
+                          : pageNum
+        } else {
+          pageNum = text -1
+        }
+
+        const pageInfo = {
+          page: `${pageNum}`,
+          size: 10,
+          sort: "userid,desc"
+        }
+
+        // location.href=`${rootPath}buyer/list?page=${pageNum}&size=10&sort=userid,desc`
+        location.href=`${rootPath}buyer/list?` + $.param(pageInfo)
+      })
+    })
+  </script>
+
+</section>

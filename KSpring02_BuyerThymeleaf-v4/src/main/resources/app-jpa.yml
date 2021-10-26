@@ -1,0 +1,20 @@
+# JPA Setting
+spring:
+  jpa:
+    hibernate:
+      ddl-aut: create
+
+      # bulk data insert or update Batch Process Enable ? ?????? ???? ?
+      jdbc:
+        batch_size: 100
+      order_insert: true
+      order_update: true
+
+    database: mysql
+    database-plattform: "org.hibernate.dialect.MySQL8Dialect"
+
+    # SQL Logger
+    show-sql: true
+
+    ### 계층구조가 없을 떄 기존방식으로 냅둬도 크게 불편하지 않음
+    properties.hibernate.format_sql: true

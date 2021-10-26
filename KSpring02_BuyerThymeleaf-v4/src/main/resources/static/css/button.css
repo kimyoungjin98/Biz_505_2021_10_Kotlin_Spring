@@ -1,0 +1,28 @@
+button {
+    display: block;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 0px 5px;
+    width: 20%;
+    text-align: center;
+    padding: 0.3rem;
+
+    background: #282c34;
+    color: white;
+}
+
+div.div_button {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*
+!important : 이전에 어떤 style이 지정되었든 상관없이 현재 지정하는 style이 적용이 되도록 하라
+
+button.btn_warring {
+    color:white !important;
+    background-color: red !important;
+}
+*/

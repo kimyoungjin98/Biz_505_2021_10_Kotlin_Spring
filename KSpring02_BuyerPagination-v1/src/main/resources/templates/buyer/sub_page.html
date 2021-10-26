@@ -1,0 +1,9 @@
+<tr class="buyer_tr" th:each="BUYER: ${BUYERS}" th:data-id="${BUYER.userid}">
+    <td th:text="${BUYER.userid}"/>
+    <td th:text="${BUYER.name}"/>
+    <td th:text="${BUYER.tel}"/>
+    <td th:text="${BUYER.address}"/>
+    <td th:text="${BUYER.manager}"/>
+    <td th:text="${BUYER.man_tel}"/>
+    <td th:text="${BUYER.buy_total}"/>
+</tr>

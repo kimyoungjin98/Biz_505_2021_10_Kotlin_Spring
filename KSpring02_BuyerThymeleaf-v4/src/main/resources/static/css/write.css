@@ -1,0 +1,41 @@
+form.write_form {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+form.write_form fieldset {
+    border: 1px solid #282c34;
+    border-radius: 10px;
+}
+
+form.write_form legend {
+    margin: 10px;
+}
+
+form.write_form div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+form.write_form label, form.write_form input {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+
+form.write_form label {
+    width: 20%;
+    text-align: right;
+}
+
+form.write_form input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid lightsteelblue;
+}
+
+form.write_form div.write_btn {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}

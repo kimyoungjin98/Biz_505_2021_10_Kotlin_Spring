@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="~{/layout}">
+
+<section layout:fragment="content" class="order_detail">
+    <script th:inline="javascript">
+        const seq = /*[[ ${SALES.seq} ]]*/ null
+    </script>
+
+    <div class="order_detail_div">
+        <div><label>SEQ</label><span th:text="${SALES.seq}"/></div>
+        <div><label>userID</label><span th:text="${SALES.userid}"/></div>
+        <div><label>상품명</label><span th:text="${SALES.pname}"/></div>
+        <div><label>거래일시</label><span th:text="${SALES.date}"/></div>
+        <div><label>거래시간</label><span th:text="${SALES.time}"/></div>
+        <div><label>수량</label><span th:text="${SALES.qty}"/></div>
+        <div><label>단가</label><span th:text="${SALES.amt}"/></div>
+        <div><label>합계</label><span th:text="${SALES.total}"/></div>
+        <div class="div_button">
+            <button class="btn_update">주문 세부 정보 수정</button>
+            <button class="btn_delete">주문 세부 정보 삭제</button>
+            <button class="btn_list">주문 관리 리스트로</button>
+        </div>
+    </div>
+
+</section>

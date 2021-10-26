@@ -1,0 +1,17 @@
+div.order_detail_div {
+    /* display: flex; */
+    width: 70%;
+    margin: 2rem auto;
+}
+
+div.order_detail_div label {
+
+}
+
+div.order_detail_div span {
+
+}
+
+div.div_button {
+    display:flex;
+}
