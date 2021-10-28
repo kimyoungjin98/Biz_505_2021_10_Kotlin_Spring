@@ -1,0 +1,8 @@
+# Logger Setting
+logging:
+  level:
+    root: info
+    com.callor.readbook:
+      controller: debug
+      service: debug
+      repository: debug

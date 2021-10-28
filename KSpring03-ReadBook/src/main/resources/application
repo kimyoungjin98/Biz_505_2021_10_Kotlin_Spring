@@ -1,0 +1,12 @@
+# JPA ??
+spring.jpa.database-plattform=org.hibernate.dialect.MySQL8Dialect
+spring.jpa.database=mysql
+
+# batch transaction
+spring.jpa.properties.hibernate.jdbc.batch_size=50
+spring.jpa.properties.hibernate.order_insert=true
+spring.jpa.properties.hibernate.order_updates=true
+
+# JPA Logging
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
