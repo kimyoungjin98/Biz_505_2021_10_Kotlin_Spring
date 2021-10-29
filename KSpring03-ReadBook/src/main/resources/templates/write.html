@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/static/write.css">
+    <link rel="stylesheet" href="/static/form.css">
     <script src="/static/js/write.js"></script>
     <title>Document</title>
 </head>
@@ -40,6 +41,33 @@
             <button class="btn_list">리스트</button>
         </div>
     </form>
+
+        <form>
+            <fieldset>
+                <legend>독서록 작성</legend>
+                <div class="input">
+                    <input placeholder="ISBN"/>
+                    <input placeholder="도서명"/>
+                </div>
+                <div class="input">
+                    <label>읽은날짜:</label><input/>
+                    <label>읽기시작:</label><input/>
+                    <label>읽기마침:</label><input/>
+                </div>
+                <div class="input">
+                    <input placeholder="내용을 입력하세요"/>
+                </div>
+                <div class="input">
+                    <input placeholder="내용을 입력하세요"/>
+                </div>
+                <div class="btn_box right">
+                    <button type="submit" class="save">저장</button>
+                    <button type="reset" class="reset">새로작성</button>
+                    <button type="button" class="list">리스트로</button>
+                </div>
+            </fieldset>
+        </form>
+
 
 </body>
 </html>

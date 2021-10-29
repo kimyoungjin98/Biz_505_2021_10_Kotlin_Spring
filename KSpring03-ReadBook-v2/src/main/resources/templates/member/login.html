@@ -1,0 +1,28 @@
+<!-- 템플릿에 있는 layout을 가지고 와서 write파일을 감싸도록 하겠다?-->
+<html lang="ko"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<!--layout을 가지고와서 하나의 view로 보이란 의미-->
+<section layout:fragment="content" class="content">
+    <form method="POST" class="login_form" >
+        <fieldset>
+            <input type="hidden" th:name="*{_csrf.parameterName}" th:value="*{_csrf.token}"/>
+            <div class="input">
+                <input placeholder="ID"/>
+            </div>
+            <div class="input">
+                <input placeholder="PASSWORD" type="password"/>
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox"/>
+                    <label>ID 기억하기</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn login">로그인</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>
