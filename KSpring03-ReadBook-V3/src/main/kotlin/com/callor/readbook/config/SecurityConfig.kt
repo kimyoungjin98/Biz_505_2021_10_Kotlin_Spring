@@ -17,7 +17,7 @@ import javax.servlet.annotation.WebServlet
 @SpringBootConfiguration
 // 프로젝트에 Spring Security 설정을 추가한다
 // Spring Security를 Customizing 하겠다
-@EnableWebSecurity
+ @EnableWebSecurity
 class SecurityConfig : WebSecurityConfigurerAdapter() {
 
     //    @Autowired
@@ -61,6 +61,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
      * 인증절차를 수행하는 policy 설정
      */
     override fun configure(http: HttpSecurity) {
+
+//        http.csrf().disable();
 //        http
 //            // 인증, 인가를 허용하겠다.
 //            // client로부터 전달된 Request가 인가된 요청인가를 확인하겠다

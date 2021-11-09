@@ -5,14 +5,14 @@ form {
 }
 
 fieldset {
-    border: 1px solid cadetblue;
+    border: 1px solid darkred;
     border-radius: 10px;
     padding: 10px 30px;
-    color: darkolivegreen;
+    color: darkred;
 }
 
 div.error {
-    color: red;
+    color: blueviolet;
     font-weight: bold;
 }
 
@@ -27,14 +27,15 @@ button {
     padding: 0.5rem 1rem;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 3px;
 
-    background-color: lightgreen;
-    color: darkolivegreen;
+    background-color: darkred;
+    color: white;
 }
 
 button:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    transition:0.5s ease;
+    background-color:darkslateblue;
     cursor: pointer;
 }
 
@@ -60,7 +61,7 @@ div.input input {
 
 div.input label {
     text-align: right;
-    color: cadetblue;
+    color: darkred;
     font-weight: bold;
 }
 
@@ -73,9 +74,4 @@ div.btn_box.right {
 div.btn_box.left {
     text-align: left;
     justify-content: left;
-}
-
-form.login_form button.btn_login {
-    background-color: cadetblue;
-    color: white;
 }

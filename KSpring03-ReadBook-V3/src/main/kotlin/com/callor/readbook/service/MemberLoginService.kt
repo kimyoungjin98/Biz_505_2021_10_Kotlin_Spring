@@ -20,6 +20,7 @@ class MemberLoginService:UserDetailsService {
         MemberVO(username = "in", password = "12345"),
         MemberVO(username = "iniz", password = "12345"),
         MemberVO(username = "inizz", password = "12345"),
+            MemberVO(username = "dudzpsdb", password = "dudzpsdb"),
     )
 
     // 사용자 또는 사용자 ID를 검색해서 만약 결과가 있으면 그 정보를 return해라

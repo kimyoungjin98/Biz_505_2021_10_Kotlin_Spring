@@ -18,13 +18,13 @@ header {
     align-content: center;
 
     text-align: center;
-    text-shadow: 2px 2px 2px black;
+    text-shadow: 2px 2px 2px blueviolet;
     color: white;
 
-    background-image: url("../images/header.jpg");
+    background-image: url("../images/611815_1621342819.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: 100% 250%;
 }
 
 section.content {
@@ -36,8 +36,12 @@ section.content {
 }
 
 footer {
-    background-color: darkslateblue;
+    background-image: url("../images/611815_1621342819.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size:100% 450%;
+
     color: white;
     text-align: center;
-    padding: 0.7rem;
+    padding: 5rem;
 }

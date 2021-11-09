@@ -11,4 +11,5 @@ class HomeController {
     fun home():String {
         return "redirect:/member/mypage"
     }
+
 }
