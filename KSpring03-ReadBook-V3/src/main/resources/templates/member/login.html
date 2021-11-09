@@ -1,0 +1,41 @@
+<html lang="ko" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layout}"
+      xmlns="http://www.w3.org/1999/html">
+<section layout:fragment="content" class="content">
+    <form method="POST" th:action="@{/login}" class="login_form">
+        <!--    <form method="post" class="login_form">-->
+        <fieldset>
+            <!-- <input name="" type="hidden" th:name="*{_csrf.parameterName}" th:value="*{_csrf.token}"> -->
+            <!--
+            th:if="@{변수}"
+            변수값이 있으면 (not null)이면 해당 tag를 화면에 그리고 그렇지 않으면 null이면 해당 tag를 아예 그리지 말라
+            -->
+            <!-- 모든 Error -->
+            <div class="input error" th:if="${param.error}">
+                로그인 실패: 사용자 ID 또는 비밀번호 오류
+            </div>
+            <!-- ID가 없는 경우 발생하는 Error -->
+            <div class="input error"
+                 th:if="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}"
+                 th:text="${session?.SPRING_SECURITY_LAST_EXCEPTION?.message}">
+
+            </div>
+            <div class="input">
+                <input name="username" placeholder="USER ID">
+            </div>
+            <div class="input">
+                <input name="password" placeholder="USER PASSWORD" type="password">
+            </div>
+            <div class="input">
+                <div>
+                    <input type="checkbox">
+                    <!-- Spring Security가 최신 버전일 때 지원됨. -->
+                    <label>Login 유지하기</label>
+                </div>
+            </div>
+            <div class="input btn_box left">
+                <button class="btn btn_login">Login</button>
+            </div>
+        </fieldset>
+    </form>
+</section>
+</html>
