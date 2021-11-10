@@ -1,4 +1,4 @@
-package com.callor.readbook
+package com.callor.readbook.config
 
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry

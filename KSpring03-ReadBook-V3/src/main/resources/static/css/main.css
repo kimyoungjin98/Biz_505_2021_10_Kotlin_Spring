@@ -68,6 +68,35 @@ li{
     margin:10px;
 }
 
-li.login{
+ul div{
+    display: flex;
     margin-left:auto;
+}
+
+
+table, tr, th, td {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+
+table {
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #eee;
+}
+
+th {
+    padding: 1rem;
+    background: darkred;
+    color:white;
+}
+
+td {
+    padding: 0.5rem;
 }

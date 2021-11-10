@@ -63,6 +63,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity) {
 
 //        http.csrf().disable();
+
+
 //        http
 //            // 인증, 인가를 허용하겠다.
 //            // client로부터 전달된 Request가 인가된 요청인가를 확인하겠다
@@ -89,7 +91,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
              ( 순서가 바뀌면 완전 다른 코드가 나와버린다.. 순서가 바뀌면 의미가 없는 코드가 되어버리는 거 같다.. )
              */
             // member/mypage로 Request가 오면 인증 절차를 수행하라
-            .antMatchers("/member/mypage").authenticated()
+            .antMatchers("/member/mypage", "/", "/write").authenticated()
             // member 폴더에 있는 모든 폴더와 파일들을 허용하라
             .antMatchers("/member/**").permitAll()
             .antMatchers("/**").permitAll()
@@ -117,7 +119,7 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
             // {rootPath}/logout으로 요청이 들어오면 logout을 수행하라
             .logoutRequestMatcher(AntPathRequestMatcher("/logout"))
             // logout이 정상적으로 수행되면 /member/mypage로 redirect를 수행하라
-            .logoutSuccessUrl("/member/mypage")
+            .logoutSuccessUrl("/")
     }
 
     /**

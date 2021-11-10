@@ -13,5 +13,11 @@ class ReadBookServiceImpl(val repo:ReadBookRepository):ReadBookService {
         repo.save(readBook);
     }
 
+    override fun readBookList(): Array<ReadBookDTO> {
+
+        return repo.findAll().toTypedArray();
+
+    }
+
 
 }

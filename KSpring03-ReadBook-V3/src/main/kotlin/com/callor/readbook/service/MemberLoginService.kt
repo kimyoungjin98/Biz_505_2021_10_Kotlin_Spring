@@ -17,9 +17,6 @@ class MemberLoginService:UserDetailsService {
 
     // 가상의 memberList 생성
     private val userList = listOf(
-        MemberVO(username = "in", password = "12345"),
-        MemberVO(username = "iniz", password = "12345"),
-        MemberVO(username = "inizz", password = "12345"),
             MemberVO(username = "dudzpsdb", password = "dudzpsdb"),
     )
 
@@ -38,6 +35,13 @@ class MemberLoginService:UserDetailsService {
         member ?: throw UsernameNotFoundException("사용자 ID가 잘못되었습니다.")
 
         return member
+    }
+
+    fun findById(username: String):MemberVO{
+
+        val member = userList.filter { it.username == username }
+
+        return member.get(0)
     }
 
 }
